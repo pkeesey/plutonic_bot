@@ -1,0 +1,2 @@
+module ContentOwnerHelper
+end
