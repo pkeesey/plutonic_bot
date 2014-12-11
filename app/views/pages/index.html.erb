@@ -1,0 +1,26 @@
+<h1>Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Path</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.page_title %></td>
+        <td><%= page.page_path %></td>
+      
+        <
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'new page', new_page_path %>
+

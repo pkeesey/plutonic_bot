@@ -11,27 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207183916) do
+ActiveRecord::Schema.define(version: 20141210021750) do
 
   create_table "content_owners", force: true do |t|
-    t.string "office"
+    t.string   "office"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "metrics", force: true do |t|
+    t.integer  "sessions"
+    t.float    "bounce_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pages", force: true do |t|
-    t.integer "content_owners_id"
-    t.string "page_title"
-    t.string "page_path"
+    t.integer  "content_owner_id"
+    t.string   "page_title"
+    t.string   "page_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "urls", force: true do |t|
-    t.integery "pages_id"
-    t.string "campaign_description"
-    t.string "campaign_source"
-    t.string "campaign_medium"
+    t.integer  "page_id"
+    t.string   "campaign_description"
+    t.string   "campaign_source"
+    t.string   "campaign_medium"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

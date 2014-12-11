@@ -1,0 +1,41 @@
+##urls
+
+<h1>New URL</h1>
+
+	<% if @url.errors.any? %>
+	<h1>  Please check to make sure all fields are entered </h1>
+		<ul>
+<% @url.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+<% end %>
+<% end %>
+</ul>
+
+<%= form_for(@url) do |f| %>
+	<p>
+	  <select name="url[page_id]">
+      <% @pages.each do |page| %>
+        <option value="<%= page.id %>"><%= page.page_title %>, <%=page.page_path %> </option>
+      <% end %>
+    </select>
+	</p>
+
+	<p>
+	<%= f.label :campaign_source %>
+	<%= f.text_field :campaign_description %>
+	</p>
+
+	<p>
+	<%= f.label :campaign_source%>
+	<%= f.text_field :campaign_source %>
+	</p>
+
+	<p>
+	<%= f.label :campaign_medium %>
+	<%= f.text_field :campaign_medium %>
+	</p>
+
+
+	<%= f.submit "Submit"%>
+	
+<% end %>

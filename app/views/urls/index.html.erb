@@ -1,0 +1,27 @@
+<h1>All Campagins</h1>
+<table>
+<thead>
+    <tr>
+      <th>Campaign Name</th>
+      <th>Campaign Source</th>
+      <th>Campaign Medium</th>
+      <th>Full URL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.campaign_description %></td>
+        <td><%= url.campaign_source %></td>
+        <td><%= url.campaign_medium %></td>
+        <td><%= url.built_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+

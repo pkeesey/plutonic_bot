@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  get 'content_owner/index'
+  
+  get 'metric/index'
 
-  get 'content_owner/new'
+  get 'metric/edit'
 
-  get 'content_owner/edit'
+  get 'metric/delete'
 
-  get 'content_owner/delete'
+  get 'metric/new'
 
+  resources :pages
+  resources :urls
+  resources :content_owners
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
